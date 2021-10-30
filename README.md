@@ -2,7 +2,7 @@
 
 ### MotionGifs Website Link
 
-[Deployed Site]("COMING SOON")
+"COMING SOON"
 
 - [Overview](#overview)
 - [MVP](#mvp)
@@ -23,26 +23,23 @@
 
 ## Overview
 
-_**Project Title** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+_**MotionGifs** is a gif displaying app where users can post gifs and interact with one another. Users are able to comment on other gifs that are posted.
 
 
 <br>
 
 ## MVP
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
-
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+Have a function homepage where users are able to sign in/sign up for a MotionGifs account that receives a JWT. Users are able to view, post, edit, and delete gifs while also being able to comment on other gifs. Non-users can view the site, but can't post, edit or delete.
 
 <br>
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- _Create models, routes, and controllers for users, posts, and comments using Ruby on Rails._
+- _Authentication for users and JWT creation._
+- _Connect to a React front-end that displays homepage, posts, and comments._
+- _Style using Material UI and vanilla CSS_
 
 <br>
 
