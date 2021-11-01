@@ -44,11 +44,13 @@ Have a function homepage where users are able to sign in/sign up for a MotionGif
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | _Used for front-end app_ |
+|   React Router Dom   | _Route, Link, useParams, useHistory_ |
+| Material-UI| _Styled components and style library for front-end_ |
+|     Axios      | _Make requests from front-end to Rails back-end_ |
+|  Cors  | _Used to connect front-end requests to back-end server logic_ |
+|  Bcrypt  | _Security to hash passwords_ |
+|  JWT  | _Used to create JSON web tokens for users_ |
 
 <br>
 
