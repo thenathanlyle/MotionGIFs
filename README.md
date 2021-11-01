@@ -1,9 +1,5 @@
 # MotionGifs
 
-### MotionGifs Website Link
-
-"COMING SOON"
-
 - [Overview](#overview)
 - [MVP](#mvp)
   - [Goals](#goals)
