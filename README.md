@@ -62,27 +62,9 @@ Have a function homepage where users are able to sign in/sign up for a MotionGif
 
 [Wireframe Link](https://www.figma.com/file/Aram4qlCgewyO2y9AsqYUg/MotionGifs?node-id=0%3A1 "wireframe link")
 
-- Desktop Landing
+- Mobile View: HOME / VIEW COMMENTS / SIGN UP
 
 ![Mobile- Home](assets/wireframe/MotionGIFs_Wireframe.png)
-
-- Desktop Hero
-
-![Dummy Link](url)
-
-- Resource Index
-
-![Dummy Link](url)
-
-- Resource Show
-
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
 
 #### Component Tree
 
@@ -95,16 +77,39 @@ Have a function homepage where users are able to sign in/sign up for a MotionGif
 > Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like.
 
 ```structure
-
 src
 |__ assets/
       |__ fonts
-      |__ graphics
       |__ images
-      |__ mockups
+|__ helper/
+      |__ sort.js
 |__ components/
       |__ Header.jsx
+      |__ Footer.jsx
+      |__ PostCard.jsx
+      |__ CommentCard.jsx
+      |__ NewButton.jsx
+      |__ TrendingButton.jsx
 |__ services/
+      |__ api-config.js
+      |__ users.js
+      |__ posts.js
+      |__ comments.js
+|__ layout/
+      |__ Layout.jsx
+|__ screens/
+      |__ Home.jsx
+      |__ SignUp.jsx
+      |__ SignIn.jsx
+      |__ Posts.jsx
+      |__ PostDetail.jsx
+      |__ PostCreate.jsx
+      |__ PostEdit.jsx
+      |__ CommentCreate.jsx
+      |__ CommentEdit.jsx
+|__ containers/
+      |__ PostsContainer.jsx
+      |__ CommentsContainer.jsx
 
 ```
 
