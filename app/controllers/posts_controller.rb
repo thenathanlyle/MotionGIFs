@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :update, :destroy]
-  before_action :authorize_request, except: [:index, :show]
+  before_action :set_post, only: :show
+  before_action :authorize_request, only: [:create, :update, :destroy]
+  before_action :set_user_post, only: [:update, :destroy]
 
   # GET /posts
   def index
@@ -33,36 +34,17 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1
   def update
-    if @payload[:id] == @post.user_id && @post.update(post_params)
+    if @post.update(post)
       render json: @post
-    elsif @payload[:id] != @post.user_id
-      render json: {
-        error: @post.errors, 
-        status: :unauthorized,
-        message: 'User did not create this post.'
-      }
     else
-      render json: {
-        error: @post.errors,
-        status: :unprocessable_entity,
-        message: 'Request body has unpermitted content.'
-      }
+      render json: @post.errors, status: :unprocessable_entity
     end
   end
 
+
   # DELETE /posts/1
   def destroy
-    if @payload[:id] == @post.user_id
-      @post.destroy
-      render json: { message: 'Post has been destroyed.' }
-    elsif @payload[:id] != @post.user_id
-      render json: {
-        status: :unauthorized,
-        message: 'User did not create this post.'
-      }
-    else
-      render json: @post.errors
-    end
+    @post.destroy
   end
 
   private
