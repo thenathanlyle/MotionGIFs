@@ -58,7 +58,7 @@ Have a function homepage where users are able to sign in/sign up for a MotionGif
 
 - Mobile View: HOME / VIEW COMMENTS / SIGN UP
 
-![Mobile- Home](assets/wireframe/MotionGIFs_Wireframe.png)
+![Mobile- Home](assets/MotionGIFs_Wireframe.png)
 
 #### Component Tree: [MotionGIFs Component Tree](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
 
@@ -124,7 +124,7 @@ src
 
 #### ERD Model
 
-![ERD](assets/erd/MotionGIFs.drawio.png)
+![ERD](assets/MotionGIFs.drawio.png)
 
 <br>
 
