@@ -54,13 +54,19 @@ Have a function homepage where users are able to sign in/sign up for a MotionGif
 
 ### Client (Front End)
 
-#### Wireframes: [MotionGIFs Wireframe Link](https://www.figma.com/file/Aram4qlCgewyO2y9AsqYUg/MotionGifs?node-id=0%3A1 "wireframe link")
+#### Wireframes
+
+[MotionGIFs Wireframe Link](https://www.figma.com/file/Aram4qlCgewyO2y9AsqYUg/MotionGifs?node-id=0%3A1 "wireframe link")
 
 - Mobile View: HOME / VIEW COMMENTS / SIGN UP
 
 ![Mobile- Home](assets/MotionGIFs_Wireframe.png)
 
-#### Component Tree: [MotionGIFs Component Tree](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
+#### Component Tree
+
+[MotionGIFs Component Tree](https://whimsical.com/5NuTVxmc7QZRhmAcy24TTs "component tree")
+
+![Component Hierarchy](assets/MotionGIFs_ComponentHierarchy.png)
 
 ---
 
