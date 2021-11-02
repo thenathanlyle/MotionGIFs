@@ -61,7 +61,8 @@ Have a function homepage where users are able to sign in/sign up for a MotionGIF
 
 - Mobile View: HOME / VIEW COMMENTS / SIGN UP
 
-![Mobile- Home](assets/MotionGIFs_Figma.png)
+![Mobile- Home](assets/MotionGIFs_Figma1.png)
+![Mobile- Create](assets/MotionGIFs_Figma2.png)
 
 #### Component Tree
 
