@@ -13,12 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   def show
     @user = User.find(@post.user_id)
-    # render json: @food, include: :comments
-    render json: {
-      post: @post, 
-      username: @user.username, 
-      image_url: @user.image_url
-    }
+    render json: @post, include: [comments: {include: :user}], status: :ok
   end
 
   # POST /posts
