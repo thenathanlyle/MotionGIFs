@@ -1,4 +1,4 @@
-# MotionGifs
+# MotionGIFs
 
 - [Overview](#overview)
 - [MVP](#mvp)
@@ -19,13 +19,13 @@
 
 ## Overview
 
-**MotionGifs** is a meme displaying app where users can post gifs and interact with one another. Users are able to comment on other users posted content.
+**MotionGIFs** is a meme displaying app where users can post gifs and interact with one another. Users are able to comment on other users posted content.
 
 <br>
 
 ## MVP
 
-Have a function homepage where users are able to sign in/sign up for a MotionGifs account that receives a JWT. Users are able to view, post, edit, and delete posts and post comments. Non-users can view the site, but can't post, edit or delete.
+Have a function homepage where users are able to sign in/sign up for a MotionGIFs account that receives a JWT. Users are able to view, post, edit, and delete posts and post comments. Non-users can view the site, but can't post, edit or delete.
 
 <br>
 
