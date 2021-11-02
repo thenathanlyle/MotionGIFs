@@ -40,8 +40,6 @@ Have a function homepage where users are able to sign in/sign up for a MotionGif
 
 ### Libraries and Dependencies
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
-
 |     Library      | Description                                                   |
 | :--------------: | :------------------------------------------------------------ |
 |      React       | _Used for front-end app_                                      |
@@ -56,25 +54,17 @@ Have a function homepage where users are able to sign in/sign up for a MotionGif
 
 ### Client (Front End)
 
-#### Wireframes
-
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
-
-[Wireframe Link](https://www.figma.com/file/Aram4qlCgewyO2y9AsqYUg/MotionGifs?node-id=0%3A1 "wireframe link")
+#### Wireframes: [MotionGIFs Wireframe Link](https://www.figma.com/file/Aram4qlCgewyO2y9AsqYUg/MotionGifs?node-id=0%3A1 "wireframe link")
 
 - Mobile View: HOME / VIEW COMMENTS / SIGN UP
 
 ![Mobile- Home](assets/wireframe/MotionGIFs_Wireframe.png)
 
-#### Component Tree
+#### Component Tree: [MotionGIFs Component Tree](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
-
-[Component Tree Sample](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
+---
 
 #### Component Architecture
-
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like.
 
 ```structure
 src
@@ -94,7 +84,6 @@ src
       |__ api-config.js
       |__ users.js
       |__ posts.js
-      |__ comments.js
 |__ layout/
       |__ Layout.jsx
 |__ screens/
@@ -109,21 +98,25 @@ src
       |__ CommentEdit.jsx
 |__ containers/
       |__ PostsContainer.jsx
-      |__ CommentsContainer.jsx
-
 ```
+
+---
 
 #### Time Estimates
 
-> Use this section to estimate the time necessary to build out each of the components you've described above.
-
-| Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
-
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
+| Task                            | Priority | Estimated Time | Time Invested | Actual Time |
+| ------------------------------- | :------: | :------------: | :-----------: | :---------: |
+| Define models                   |    H     |      2 hr      |     0 hrs     |     TBD     |
+| Define controllers              |    H     |      2 hr      |     0 hrs     |     TBD     |
+| Define routes                   |    H     |      3 hr      |     0 hrs     |     TBD     |
+| Define screens logic            |    H     |     8 hrs      |     0 hrs     |     TBD     |
+| Define component logic          |    H     |     8 hrs      |     0 hrs     |     TBD     |
+| Define services logic           |    H     |     2 hrs      |     0 hrs     |     TBD     |
+| Define container logic          |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Define layout logic             |    H     |      2 hr      |     0 hrs     |     TBD     |
+| Base CSS with MUI & Vanilla CSS |    5H    |     2 hrs      |     0 hrs     |     TBD     |
+| Advanced styling                |    H     |     10 hrs     |     0 hrs     |     TBD     |
+| TOTAL                           |          |     45 hrs     |     0 hrs     |     TBD     |
 
 <br>
 
@@ -131,16 +124,19 @@ src
 
 #### ERD Model
 
-> Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
+![ERD](assets/erd/MotionGIFs.drawio.png)
 
-[ERD Sample](https://drive.google.com/file/d/1kLyQTZqfcA4jjKWQexfEkG2UspyclK8Q/view)
 <br>
 
 ---
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+- _Add likes, upvotes, and downvotes for comments and posts_
+- _Allow users to upload profile pics from local device_
+- _Add categories to filters posts_
+- _Add sort options to search most recent and most trending posts_
+- _Add user profile pages to view what individual user uploaded_
 
 ---
 
