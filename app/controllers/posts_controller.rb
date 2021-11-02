@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: :show
-  before_action :authorize_request, only: [:create, :update, :destroy]
-  before_action :set_user_post, only: [:update, :destroy]
+  before_action :set_post, only: [:show, :update, :destroy]
+  before_action :authorize_request, except: [:index, :show]
 
   # GET /posts
   def index
@@ -56,12 +55,13 @@ class PostsController < ApplicationController
     if @payload[:id] == @post.user_id
       @post.destroy
       render json: { message: 'Post has been destroyed.' }
-    else
+    elsif @payload[:id] != @post.user_id
       render json: {
-        error: @post.errors, 
         status: :unauthorized,
         message: 'User did not create this post.'
       }
+    else
+      render json: @post.errors
     end
   end
 
@@ -71,9 +71,9 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
-    def set_user_post
-      @post = @current_user.posts.find(params[:id])
-    end
+    # def set_user_post
+    #   @post = @current_user.posts.find(params[:id])
+    # end
 
     # Only allow a list of trusted parameters through.
     def post_params

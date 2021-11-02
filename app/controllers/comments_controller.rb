@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
   # POST /comments
   def create
     @comment = Comment.new(comment_params)
-
+    @comment.user = @current_user
     if @comment.save
       render json: @comment, status: :created, location: @comment
     else
@@ -25,24 +25,44 @@ class CommentsController < ApplicationController
   end
 
   # # PATCH/PUT /comments/1
-  # def update
-  #   if @comment.update(comment_params)
-  #     render json: @comment
-  #   else
-  #     render json: @comment.errors, status: :unprocessable_entity
-  #   end
-  # end
+  def update
+    if @payload[:id] == @comment.user_id && @comment.update(comment_params)
+      render json: @comment
+    elsif @payload[:id] != @comment.user_id
+      render json: {
+        error: @comment.errors, 
+        status: :unprocessable_entity,
+        message: 'User did not create this comment.'
+      }
+    else
+      render json: {
+        error: @comment.errors,
+        status: :unprocessable_entity,
+        message: 'Request body has unpermitted content.'
+      }
+    end
+  end
 
   # # DELETE /comments/1
-  # def destroy
-  #   @comment.destroy
-  # end
+  def destroy
+    if @payload[:id] == @comment.user_id
+      @comment.destroy
+      render json: { message: 'Comment has been destroyed.'}
+    elsif @payload[:id] != @comment.user_id
+      render json: {
+        status: :unauthorized,
+        message: 'User did not create this comment.'
+      }
+    else
+      render json: @post.errors
+    end
+  end
 
   private
-    # # Use callbacks to share common setup or constraints between actions.
-    # def set_comment
-    #   @comment = Comment.find(params[:id])
-    # end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_comment
+      @comment = Comment.find(params[:id])
+    end
 
     # Only allow a list of trusted parameters through.
     def comment_params
