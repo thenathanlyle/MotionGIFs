@@ -42,15 +42,15 @@ Have a function homepage where users are able to sign in/sign up for a MotionGif
 
 > Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
 
-|     Library      | Description                                |
-| :--------------: | :----------------------------------------- |
-|      React       | _Used for front-end app_ |
-|   React Router Dom   | _Route, Link, useParams, useHistory_ |
-| Material-UI| _Styled components and style library for front-end_ |
-|     Axios      | _Make requests from front-end to Rails back-end_ |
-|  Cors  | _Used to connect front-end requests to back-end server logic_ |
-|  Bcrypt  | _Security to hash passwords_ |
-|  JWT  | _Used to create JSON web tokens for users_ |
+|     Library      | Description                                                   |
+| :--------------: | :------------------------------------------------------------ |
+|      React       | _Used for front-end app_                                      |
+| React Router Dom | _Route, Link, useParams, useHistory_                          |
+|   Material-UI    | _Styled components and style library for front-end_           |
+|      Axios       | _Make requests from front-end to Rails back-end_              |
+|       Cors       | _Used to connect front-end requests to back-end server logic_ |
+|      Bcrypt      | _Security to hash passwords_                                  |
+|       JWT        | _Used to create JSON web tokens for users_                    |
 
 <br>
 
@@ -64,7 +64,7 @@ Have a function homepage where users are able to sign in/sign up for a MotionGif
 
 - Desktop Landing
 
-![Mobile- Home](url)
+![Mobile- Home](assets/wireframe/MotionGIFs_Wireframe.png)
 
 - Desktop Hero
 
@@ -92,9 +92,9 @@ Have a function homepage where users are able to sign in/sign up for a MotionGif
 
 #### Component Architecture
 
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
+> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like.
 
-``` structure
+```structure
 
 src
 |__ assets/
@@ -131,13 +131,13 @@ src
 [ERD Sample](https://drive.google.com/file/d/1kLyQTZqfcA4jjKWQexfEkG2UspyclK8Q/view)
 <br>
 
-***
+---
 
 ## Post-MVP
 
 > Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
 
-***
+---
 
 ## Code Showcase
 
