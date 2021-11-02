@@ -12,7 +12,12 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
-    render json: @post, include: :comments
+    @user = User.find(@post.user_id)
+    render json: {
+      post: @post, 
+      username: @user.username, 
+      image_url: @user.image_url
+    }
   end
 
   # POST /posts
@@ -28,25 +33,35 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1
   def update
-    if @post.update(post_params)
+    if @payload[:id] == @post.user_id && @post.update(post_params)
       render json: @post
+    elsif @payload[:id] != @post.user_id
+      render json: {
+        error: @post.errors, 
+        status: :unauthorized,
+        message: 'User did not create this post.'
+      }
     else
-      render json: @post.errors, status: :unprocessable_entity
+      render json: {
+        error: @post.errors,
+        status: :unprocessable_entity,
+        message: 'Request body has unpermitted content.'
+      }
     end
   end
 
   # DELETE /posts/1
   def destroy
-    @post.destroy
-  end
-
-  def add_comment
-    @comment = Comment.find(params[:comment_id])
-    @post = Post.find(params[:id])
-
-    @post.comments << @comment
-
-    render json: @post, include: :comments
+    if @payload[:id] == @post.user_id
+      @post.destroy
+      render json: { message: 'Post has been destroyed.' }
+    else
+      render json: {
+        error: @post.errors, 
+        status: :unauthorized,
+        message: 'User did not create this post.'
+      }
+    end
   end
 
   private
