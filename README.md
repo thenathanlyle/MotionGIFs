@@ -64,7 +64,7 @@ Have a function homepage where users are able to sign in/sign up for a MotionGif
 
 - Desktop Landing
 
-![Dummy Link](url)
+![Mobile- Home](url)
 
 - Desktop Hero
 
