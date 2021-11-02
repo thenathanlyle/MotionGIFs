@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   def show
     @user = User.find(@post.user_id)
+    # render json: @food, include: :comments
     render json: {
       post: @post, 
       username: @user.username, 
@@ -76,6 +77,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:image_url, :tag, :user_id)
+      params.require(:post).permit(:image_url, :user_id)
     end
 end
