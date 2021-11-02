@@ -14,11 +14,22 @@ Comment.destroy_all
 
 puts "#{User.count} users created!"
 
-
-@meme = Post.create!(image_url: 'test.jpg', tag: '#lego', user: @admin)
+5.times do
+  @meme = Post.create!(image_url: Faker::Internet.url, user_id: @admin.id)
+end
 
 puts "#{Post.count} posts created!"
 
-Comment.create!(opinion: 'I love this show', user: @admin, post: @meme)
+5.times do
+  Comment.create!(opinion: Faker::Lorem.words(number: 3), user_id: @admin.id, post_id: @meme.id)
+end
 
 puts "#{Comment.count} comments created!"
+
+# @meme = Post.create!(image_url: 'test.jpg', tag: '#lego', user: @admin)
+
+# puts "#{Post.count} posts created!"
+
+# Comment.create!(opinion: 'I love this show', user: @admin, post: @meme)
+
+# puts "#{Comment.count} comments created!"
