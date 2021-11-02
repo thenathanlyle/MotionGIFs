@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :update, :destroy]
+  before_action :set_food, only: :show
+  before_action :authorize_request, only: [:create, :update, :destroy]
+  before_action :set_user_food, only: [:update, :destroy]
 
   # GET /comments
   def index
@@ -12,11 +14,6 @@ class CommentsController < ApplicationController
   #   @post = Post.find(params[:post_id])
   #   @comments = Comment.where(post_id: @post.id)
   #   render json: @comments, include: :post, status: :ok
-  # end
-
-  # # GET /comments/1
-  # def show
-  #   render json: @comment
   # end
 
   # POST /comments
@@ -32,36 +29,16 @@ class CommentsController < ApplicationController
 
   # # PATCH/PUT /comments/1
   def update
-    if @payload[:id] == @comment.user_id && @comment.update(comment_params)
+    if @comment.update(comment_params)
       render json: @comment
-    elsif @payload[:id] != @comment.user_id
-      render json: {
-        error: @comment.errors, 
-        status: :unprocessable_entity,
-        message: 'User did not create this comment.'
-      }
     else
-      render json: {
-        error: @comment.errors,
-        status: :unprocessable_entity,
-        message: 'Request body has unpermitted content.'
-      }
+      render json: @comment.errors, status: :unprocessable_entity
     end
   end
 
   # # DELETE /comments/1
   def destroy
-    if @payload[:id] == @comment.user_id
-      @comment.destroy
-      render json: { message: 'Comment has been destroyed.'}
-    elsif @payload[:id] != @comment.user_id
-      render json: {
-        status: :unauthorized,
-        message: 'User did not create this comment.'
-      }
-    else
-      render json: @post.errors
-    end
+    @comment.destroy
   end
 
   private
