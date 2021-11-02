@@ -140,10 +140,10 @@ src
 ## Post-MVP
 
 - _Add likes, upvotes, and downvotes for comments and posts_
-- _Allow users to upload profile pics from local device_
-- _Add categories to filters posts_
+- _Allow users to upload profile pics and upload posts from local device_
+- _Add categories to filters posts like hashtags_
 - _Add sort options to search most recent and most trending posts_
-- _Add user profile pages to view what individual user uploaded_
+- _Add user profile pages to view what individual user uploads_
 
 ---
 
