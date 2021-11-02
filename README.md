@@ -35,6 +35,7 @@ Have a function homepage where users are able to sign in/sign up for a MotionGIF
 - _Authentication for users and JWT creation._
 - _Connect to a React front-end that displays homepage, posts, and comments._
 - _Style using Material UI and vanilla CSS_
+- _User Experience and mobile design priority_
 
 <br>
 
