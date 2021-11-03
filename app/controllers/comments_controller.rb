@@ -1,14 +1,13 @@
 class CommentsController < ApplicationController
-  before_action :set_food, only: :show
+  before_action :set_comment, only: :show
   before_action :authorize_request, only: [:create, :update, :destroy]
-  before_action :set_user_food, only: [:update, :destroy]
 
   # GET /comments
-  def index
-    @comments = Comment.all
+  # def index
+  #   @comments = Comment.all
 
-    render json: @comments
-  end
+  #   render json: @comments
+  # end
 
   # def index
   #   @post = Post.find(params[:post_id])

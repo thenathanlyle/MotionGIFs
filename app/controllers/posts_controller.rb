@@ -1,19 +1,23 @@
 class PostsController < ApplicationController
   before_action :set_post, only: :show
   before_action :authorize_request, only: [:create, :update, :destroy]
-  before_action :set_user_post, only: [:update, :destroy]
 
   # GET /posts
   def index
     @posts = Post.all
 
-    render json: @posts, include: :user
+    render json: @posts, :include => [
+      {:user => {:only => ['username', 'image_url']}}, 
+      :comments => {:only => ['id']}
+    ]
   end
 
   # GET /posts/1
   def show
-    @user = User.find(@post.user_id)
-    render json: @post, include: [comments: {include: :user}], status: :ok
+    # render json: @post, include: [comments: {include: :user}], status: :ok
+    render json: @post, :include => [
+      :user => {:only => ['username', 'image_url']}, 
+      :comments => {:include => [:user => {:only => ['username', 'image_url']}]}]
   end
 
   # POST /posts
@@ -46,10 +50,6 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
-    end
-
-    def set_user_post
-      @post = @current_user.posts.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
