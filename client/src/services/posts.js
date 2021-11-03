@@ -1,26 +1,46 @@
 import api from "./api-config";
 
 export const getAllPosts = async () => {
-  const resp = await api.get("/posts");
-  return resp.data;
+  try {
+    const res = await api.get("/posts");
+    return res.data;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const getOnePost = async (id) => {
-  const resp = await api.get(`/posts/${id}`);
-  return resp.data;
+  try {
+    const res = await api.get(`/posts/${id}`);
+    return res.data;
+  } catch (error) {
+    throw error;
+  }
 };
 
-export const postPost = async (postData) => {
-  const resp = await api.post("/posts", { food: postData });
-  return resp.data;
+export const createPost = async (postData) => {
+  try {
+    const res = await api.post("/posts", postData);
+    return res.data;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const putPost = async (id, postData) => {
-  const resp = await api.put(`/posts/${id}`, { post: postData });
-  return resp.data;
+  try {
+    const res = await api.get(`/posts/${id}`, postData);
+    return res.data;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const deletePost = async (id) => {
-  const resp = await api.delete(`/posts/${id}`);
-  return resp;
+  try {
+    const res = await api.delete(`/posts/${id}`);
+    return res.data;
+  } catch (error) {
+    throw error;
+  }
 };
