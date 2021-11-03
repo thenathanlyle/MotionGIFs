@@ -1,4 +1,4 @@
-// import "./Header.css";
+import "./Header.css";
 import { Link } from "react-router-dom";
 import logo from "../assets/MotionGIFs_favicon.png";
 
@@ -16,7 +16,6 @@ export default function Header({ currentUser, handleLogout }) {
       ) : (
         <Link to="/login">Login/Register</Link>
       )}
-      <Link to="/posts">Posts</Link>
     </header>
   );
 }
