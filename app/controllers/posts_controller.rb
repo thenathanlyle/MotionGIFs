@@ -6,18 +6,19 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
-    render json: @posts, :include => [
-      {:user => {:only => ['username', 'image_url']}}, 
-      :comments => {:only => ['id']}
+    render json: @posts, include: [
+      user: { only: ['username', 'image_url'] }, 
+      comments: { only: ['id'] }
     ]
   end
 
   # GET /posts/1
   def show
     # render json: @post, include: [comments: {include: :user}], status: :ok
-    render json: @post, :include => [
-      :user => {:only => ['username', 'image_url']}, 
-      :comments => {:include => [:user => {:only => ['username', 'image_url']}]}]
+    render json: @post, include: [
+      user: { only: ['username', 'image_url'] },
+      comments: { include: [user: { only: ['username', 'image_url'] }] }
+    ]
   end
 
   # POST /posts
@@ -25,7 +26,10 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = @current_user
     if @post.save
-      render json: @post, status: :created, location: @post
+      render json: @post, include: [ 
+        user: { only: ['username', 'image_url'] },
+        comments: { include: ['id']}],
+        status: :created
     else
       render json: @post.errors, status: :unprocessable_entity
     end
