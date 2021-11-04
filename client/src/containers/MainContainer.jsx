@@ -45,6 +45,7 @@ export default function MainContainer() {
         <Route path="/home">
           <Home />
         </Route>
+
         <Route path="/posts">
           <Posts posts={posts} handlePostDelete={handlePostDelete} />
         </Route>
