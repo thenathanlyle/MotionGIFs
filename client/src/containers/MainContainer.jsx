@@ -1,8 +1,16 @@
 import { useState, useEffect } from "react";
-import { Switch, Route, useHistory } from "react-router-dom";
+import { Switch, Route, useHistory, Redirect } from "react-router-dom";
 
-import { getAllPosts, postPost, putPost, deletePost } from "../services/posts";
+import {
+  getAllPosts,
+  getOnePost,
+  postPost,
+  putPost,
+  deletePost,
+} from "../services/posts";
 import Posts from "../screens/posts/Posts";
+import PostCreate from "../screens/posts/PostCreate";
+import PostUpdate from "../screens/posts/PostUpdate";
 import PostDetail from "../screens/posts/PostDetail";
 import Home from "../screens/home/Home";
 
@@ -46,6 +54,20 @@ export default function MainContainer(props) {
       <Switch>
         <Route path="/home">
           <Home />
+        </Route>
+        <Route path="/posts/create">
+          {currentUser ? (
+            <PostCreate handlePostCreate={handlePostCreate} />
+          ) : (
+            <Redirect to="/login" />
+          )}
+        </Route>
+        <Route path="/posts/:id/update">
+          {currentUser ? (
+            <PostUpdate posts={posts} handlePostUpdate={handlePostUpdate} />
+          ) : (
+            <Redirect to="/login" />
+          )}
         </Route>
         <Route path="/posts/:id">
           <PostDetail

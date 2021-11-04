@@ -7,19 +7,21 @@ export default function PostCard(props) {
   return (
     <div className="post-card">
       <img src={post?.user.image_url} alt="profile-pic" />
-      <h3>{post?.user.username}</h3>
-      {currentUser && (
-        <>
-          <img src={post?.image_url} alt="meme-pic" />
-          {currentUser && currentUser.id === post?.user_id ? (
-            <>
-              <Link to={`/posts/${post.id}/update`}>Edit</Link>
-              <button onClick={() => handlePostDelete(post.id)}>Delete</button>
-            </>
-          ) : null}{" "}
+      <h3>{post?.user.username}</h3>{" "}
+      <Link to={`/posts/${post.id}/`}>
+        <img src={post?.image_url} alt="meme-pic" />{" "}
+        <Link to={`/posts/${post.id}/`}>
           <h5>Comments: {post.comments.length}</h5>
-        </>
-      )}
+        </Link>
+      </Link>
+      <>
+        {currentUser && currentUser.id === post?.user_id ? (
+          <>
+            <Link to={`/posts/${post.id}/update`}>Edit</Link>
+            <button onClick={() => handlePostDelete(post.id)}>Delete</button>
+          </>
+        ) : null}
+      </>
     </div>
   );
 }
