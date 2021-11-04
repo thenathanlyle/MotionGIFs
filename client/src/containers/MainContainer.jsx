@@ -70,7 +70,7 @@ export default function MainContainer(props) {
             currentUser={currentUser}
           />
         </Route>
-        <Route path="/posts">
+        <Route path="/">
           <Posts
             posts={posts}
             handlePostDelete={handlePostDelete}

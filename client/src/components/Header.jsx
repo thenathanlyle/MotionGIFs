@@ -10,7 +10,7 @@ import logo from "../assets/MotionGIFs_favicon.png";
 export default function Header({ currentUser, handleLogout }) {
   return (
     <header className="header">
-      <Link to="/home">
+      <Link to="/">
         <img src={logo} alt="MotionGIFs-logo" />
       </Link>
       {currentUser ? (
