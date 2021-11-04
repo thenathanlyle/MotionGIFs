@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
 import PostCard from "../../components/PostCard";
-// import CommentCard from '../../components/CommentCard'
+import CommentCard from "../../components/CommentCard";
 import { getOnePost } from "../../services/posts";
 import { deleteComment } from "../../services/comments";
 
@@ -55,7 +55,7 @@ export default function PostDetail(props) {
         handlePostDelete={handlePostDelete}
       />
       <Link to={`/posts/${post.id}/comments/create`}>
-        <button>Add your two cents</button>
+        <button>Add a Comment</button>
       </Link>
       {comments.map((comment) => (
         <CommentCard
