@@ -4,7 +4,6 @@ import { Route, Switch, useHistory } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import UserRegister from "./screens/users/UserRegister";
 import UserLogin from "./screens/users/UserLogin";
-import Menu from "./screens/menu/Menu";
 import MainContainer from "./containers/MainContainer";
 import {
   loginUser,
@@ -52,9 +51,6 @@ function App() {
           </Route>
           <Route path="/register">
             <UserRegister handleRegister={handleRegister} />
-          </Route>
-          <Route path="/menu">
-            <Menu />
           </Route>
           <Route path="/">
             <MainContainer />
