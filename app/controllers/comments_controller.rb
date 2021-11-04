@@ -3,11 +3,11 @@ class CommentsController < ApplicationController
   before_action :authorize_request, only: [:create, :update, :destroy]
 
   # GET /comments
-  # def index
-  #   @comments = Comment.all
+  def index
+    @comments = Comment.all
 
-  #   render json: @comments
-  # end
+    render json: @comments
+  end
 
   # def index
   #   @post = Post.find(params[:post_id])
