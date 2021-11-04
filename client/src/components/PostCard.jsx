@@ -8,8 +8,8 @@ export default function PostCard({ currentUser, post, handlePostDelete }) {
 
   return (
     <div className="post-card">
-      <img src={post?.image_url} alt="profile-pic" />
-      <h3>{post?.username}</h3>
+      <img src={post?.user.image_url} alt="profile-pic" />
+      <h3>{post?.user.username}</h3>
       {currentUser && (
         <>
           <>
@@ -21,13 +21,8 @@ export default function PostCard({ currentUser, post, handlePostDelete }) {
                   Delete
                 </button>
               </>
-            ) : null}
-          </>
-          <>
+            ) : null}{" "}
             <h5>Comments: {post.comments.length}</h5>
-            <img src={commentLogo} alt="MotionGIFs-comment"></img> <h5></h5>
-            {post.comments.length}
-            <Link to={`/posts/${post.id}`}>View Meme</Link>
           </>
         </>
       )}

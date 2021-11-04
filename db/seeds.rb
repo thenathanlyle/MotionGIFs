@@ -15,13 +15,13 @@ Comment.destroy_all
 puts "#{User.count} users created!"
 
 5.times do
-  @meme = Post.create!(image_url: Faker::Internet.url, user_id: @admin.id)
+  @meme = Post.create!(image_url: 'https://cdn.playlists.net/images/playlists/image/medium/2c3cc01a8fdcddfb886589b9a2685cbf.jpg', user_id: @admin.id)
 end
 
 puts "#{Post.count} posts created!"
 
 5.times do
-  Comment.create!(opinion: Faker::Lorem.words(number: 3), user_id: @admin.id, post_id: @meme.id)
+  Comment.create!(opinion: Faker::Lorem.words(number: 3), user_id: @admin.id, post_id: 1)
 end
 
 puts "#{Comment.count} comments created!"
