@@ -3,6 +3,7 @@ import { Switch, Route, useHistory } from "react-router-dom";
 
 import { getAllPosts, postPost, putPost, deletePost } from "../services/posts";
 import Posts from "../screens/posts/Posts";
+import PostDetail from "../screens/posts/PostDetail";
 import Home from "../screens/home/Home";
 
 export default function MainContainer(props) {
@@ -46,7 +47,14 @@ export default function MainContainer(props) {
         <Route path="/home">
           <Home />
         </Route>
-
+        <Route path="/posts/:id">
+          <PostDetail
+            posts={posts}
+            setPosts={setPosts}
+            handlePostDelete={handlePostDelete}
+            currentUser={currentUser}
+          />
+        </Route>
         <Route path="/posts">
           <Posts
             posts={posts}
