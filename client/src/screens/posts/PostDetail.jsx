@@ -41,7 +41,6 @@ export default function PostDetail(props) {
         return post.id === post_id ? associatedPost : post;
       })
     );
-
     setToggle(true);
   };
 

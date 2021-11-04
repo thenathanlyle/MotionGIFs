@@ -1,5 +1,5 @@
 import "./PostCard.css";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function PostCard(props) {
   const { currentUser, post, handlePostDelete } = props;

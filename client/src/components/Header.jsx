@@ -21,7 +21,8 @@ export default function Header({ currentUser, handleLogout }) {
       ) : (
         <Link to="/login">Login/Register</Link>
       )}
-      <Link to="/posts">posts</Link>
+      <Link to="/posts">Posts</Link>
+      <Link to="/posts/create">Create a post</Link>
     </header>
   );
 }
