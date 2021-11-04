@@ -9,10 +9,7 @@ export default function PostCard(props) {
       <img src={post?.user.image_url} alt="profile-pic" />
       <h3>{post?.user.username}</h3>{" "}
       <Link to={`/posts/${post.id}/`}>
-        <img src={post?.image_url} alt="meme-pic" />{" "}
-        <Link to={`/posts/${post.id}/`}>
-          <h5>Comments: {post.comments.length}</h5>
-        </Link>
+        <img src={post?.image_url} alt="meme-pic" />
       </Link>
       <>
         {currentUser && currentUser.id === post?.user_id ? (
@@ -22,6 +19,9 @@ export default function PostCard(props) {
           </>
         ) : null}
       </>
+      <Link to={`/posts/${post.id}/`}>
+        <h5>Comments: {post.comments.length}</h5>
+      </Link>
     </div>
   );
 }
