@@ -53,7 +53,7 @@ function App() {
             <UserRegister handleRegister={handleRegister} />
           </Route>
           <Route path="/">
-            <MainContainer />
+            <MainContainer currentUser={currentUser} />
           </Route>
         </Switch>
       </Layout>

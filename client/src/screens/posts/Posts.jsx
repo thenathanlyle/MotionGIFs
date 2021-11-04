@@ -3,6 +3,7 @@ import PostCard from "../../components/PostCard";
 
 export default function Posts(props) {
   const { currentUser, posts, handlePostDelete } = props;
+  console.log(currentUser);
   return (
     <div>
       <h3>Test</h3>

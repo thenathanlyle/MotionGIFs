@@ -5,7 +5,8 @@ import { getAllPosts, postPost, putPost, deletePost } from "../services/posts";
 import Posts from "../screens/posts/Posts";
 import Home from "../screens/home/Home";
 
-export default function MainContainer() {
+export default function MainContainer(props) {
+  const { currentUser } = props;
   const [posts, setPosts] = useState([]);
   const history = useHistory();
 
@@ -47,7 +48,11 @@ export default function MainContainer() {
         </Route>
 
         <Route path="/posts">
-          <Posts posts={posts} handlePostDelete={handlePostDelete} />
+          <Posts
+            posts={posts}
+            handlePostDelete={handlePostDelete}
+            currentUser={currentUser}
+          />
         </Route>
       </Switch>
     </div>
