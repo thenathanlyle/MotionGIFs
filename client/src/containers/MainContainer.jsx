@@ -35,18 +35,19 @@ export default function MainContainer() {
 
   const handlePostDelete = async (id) => {
     await deletePost(id);
-    setPosts((prevState) => prevState.filter((post) => post.id !== id));
+    setPosts((prevState) => prevState.filter((post) => post.id !== Number(id)));
+    history.push("/posts");
   };
 
   return (
     <div>
       <Switch>
-        <Route path="/">
+        <Route path="/home">
           <Home />
         </Route>
-        {/* <Route path="/posts">
-          <Posts posts={posts} />
-        </Route> */}
+        <Route path="/posts">
+          <Posts posts={posts} handlePostDelete={handlePostDelete} />
+        </Route>
       </Switch>
     </div>
   );

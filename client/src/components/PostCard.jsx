@@ -11,12 +11,12 @@ export default function PostCard({ currentUser, post, handlePostDelete }) {
       {id ? (
         <>
           <img>{post?.image_url}</img>
-          {currentUser && currentUser.id === post?.user_id ? (
+          {/* {currentUser && currentUser.id === post?.user_id ? (
             <>
               <Link to={`/posts/${post.id}/update`}>Edit</Link>
               <button onClick={() => handlePostDelete(post.id)}>Delete</button>
             </>
-          ) : null}
+          ) : null} */}
         </>
       ) : (
         <>
