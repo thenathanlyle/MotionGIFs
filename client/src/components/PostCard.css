@@ -1,39 +1,18 @@
-/* .post-card {
-  width: 450px;
-  height: 450px;
-  border: solid 2px red;
-} */
 .post-card {
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
-  position: relative; */
-  border: solid 2px red;
-  min-width: 300px;
-  max-width: 450px;
+  position: relative;
+  min-width: 350px;
+  max-width: 550px;
   min-height: 300px;
-  max-height: 450px;
-  margin: 1rem;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
+  max-height: 550px;
+  border-radius: 5px;
+  border: solid 2px red;
+  background-color: orange;
+  margin: 20px;
   padding: 20px;
 }
-
-/* .post-card {
-  width: 90%;
-  min-width: 300px;
-  max-width: 400px;
-  height: 40%;
-  min-height: 300px;
-  max-height: 400px;
-  margin: 2rem;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-} */
 
 .user-post-card {
   display: flex;
@@ -43,11 +22,11 @@
 }
 
 .user-image {
-  /* height: 100px;
+  object-position: center;
+  object-fit: cover;
+  height: 100px;
   width: 100px;
   border-radius: 50px;
-  object-position: center;
-  object-fit: cover; */
 }
 
 .user-name {
@@ -55,4 +34,10 @@
 }
 
 .post-image {
+  object-position: center;
+  object-fit: cover;
+  min-width: 300px;
+  max-width: 550px;
+  min-height: 300px;
+  max-height: 550px;
 }
