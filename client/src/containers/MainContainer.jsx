@@ -35,9 +35,9 @@ export default function MainContainer(props) {
   };
 
   const handlePostUpdate = async (id, formData) => {
-    const updatedPost = await putPost(id, formData);
+    const updatePost = await putPost(id, formData);
     setPosts((prevState) =>
-      prevState.map((post) => (post.id === Number(id) ? updatedPost : post))
+      prevState.map((post) => (post.id === Number(id) ? updatePost : post))
     );
     history.push(`/posts/${id}`);
   };
