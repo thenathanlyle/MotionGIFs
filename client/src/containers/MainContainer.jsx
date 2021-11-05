@@ -1,10 +1,18 @@
 import { useState, useEffect } from "react";
 import { Switch, Route, useHistory, Redirect } from "react-router-dom";
-import { getAllPosts, postPost, putPost, deletePost } from "../services/posts";
+import {
+  getAllPosts,
+  createPost,
+  putPost,
+  deletePost,
+} from "../services/posts";
+import { createComment, putComment } from "../services/comments";
 import Posts from "../screens/posts/Posts";
 import PostCreate from "../screens/posts/PostCreate";
 import PostUpdate from "../screens/posts/PostUpdate";
 import PostDetail from "../screens/posts/PostDetail";
+import CommentCreate from "../screens/comments/CommentCreate";
+import CommentUpdate from "../screens/comments/CommentUpdate";
 import Home from "../screens/home/Home";
 
 export default function MainContainer(props) {
@@ -21,7 +29,7 @@ export default function MainContainer(props) {
   }, []);
 
   const handlePostCreate = async (formData) => {
-    const newPost = await postPost(formData);
+    const newPost = await createPost(formData);
     setPosts((prevState) => [...prevState, newPost]);
     history.push("/posts");
   };
@@ -42,11 +50,42 @@ export default function MainContainer(props) {
     history.push("/posts");
   };
 
+  const handleCommentCreate = async (post_id, formData) => {
+    const newComment = await createComment(post_id, formData);
+    const associatedPost = posts.find((post) => post.id === Number(post_id));
+    associatedPost.comments.push({ id: newComment.id });
+    setPosts((prevState) =>
+      prevState.map((post) => {
+        return post.id === post_id ? associatedPost : post;
+      })
+    );
+    history.push(`/posts/${post_id}`);
+  };
+
+  const handleCommentUpdate = async (post_id, comment_id, formData) => {
+    await putComment(post_id, comment_id, formData);
+    history.push(`/posts/${post_id}`);
+  };
+
   return (
     <div>
       <Switch>
         <Route path="/home">
           <Home />
+        </Route>
+        <Route path="/posts/:post_id/comments/:id/update">
+          {currentUser ? (
+            <CommentUpdate handleCommentUpdate={handleCommentUpdate} />
+          ) : (
+            <Redirect to="/login" />
+          )}
+        </Route>
+        <Route path="/posts/:id/comments/create">
+          {currentUser ? (
+            <CommentCreate handleCommentCreate={handleCommentCreate} />
+          ) : (
+            <Redirect to="/login" />
+          )}
         </Route>
         <Route path="/posts/create">
           {currentUser ? (

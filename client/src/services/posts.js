@@ -18,7 +18,7 @@ export const getOnePost = async (id) => {
   }
 };
 
-export const postPost = async (postData) => {
+export const createPost = async (postData) => {
   try {
     const res = await api.post("/posts", postData);
     return res.data;
