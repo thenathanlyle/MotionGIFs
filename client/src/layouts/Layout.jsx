@@ -1,11 +1,16 @@
 import "./Layout.css";
 import Header from "../components/Header";
 
-export default function Layout({ children, currentUser, handleLogout }) {
+export default function Layout(props) {
+  const { children, currentUser, handleLogout } = props;
   return (
-    <div>
-      <Header currentUser={currentUser} handleLogout={handleLogout} />
-      <div className="content">{children}</div>
+    <div className="layout">
+      <Header
+        className="layout-header"
+        currentUser={currentUser}
+        handleLogout={handleLogout}
+      />
+      <div className="layout-children">{children}</div>
     </div>
   );
 }
