@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :posts do
+ resources :posts do
     resources :comments, except: [:index]
   end
   post '/auth/login', to: 'authentications#login'

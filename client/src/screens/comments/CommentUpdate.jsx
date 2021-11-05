@@ -20,7 +20,7 @@ export default function CommentUpdate(props) {
       });
     };
     prefillFormData();
-  }, [id]);
+  }, [post_id, id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
