@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
     end
   end
 
-  # # DELETE /comments/1
+  # DELETE /comments/1
   def destroy
     @comment.destroy
   end

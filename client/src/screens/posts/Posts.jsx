@@ -5,15 +5,18 @@ export default function Posts(props) {
   return (
     <div>
       <h3>Test</h3>
-      {posts.map((post) => (
-        <div key={post.id}>
-          <PostCard
-            currentUser={currentUser}
-            post={post}
-            handlePostDelete={handlePostDelete}
-          />
-        </div>
-      ))}
+      {posts
+        .slice(0)
+        .reverse()
+        .map((post) => (
+          <div key={post.id}>
+            <PostCard
+              currentUser={currentUser}
+              post={post}
+              handlePostDelete={handlePostDelete}
+            />
+          </div>
+        ))}
     </div>
   );
 }

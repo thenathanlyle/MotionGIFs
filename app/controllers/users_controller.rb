@@ -1,15 +1,8 @@
 class UsersController < ApplicationController
 
-  # # GET /users
-  # def index
-  #   @users = User.all
-
-  #   render json: @users
-  # end
-
   # # GET /users/1
   # def show
-  #   render json: @user
+  #   render json: @user.attributes.except('password_digest')
   # end
 
   # POST /users
@@ -26,6 +19,16 @@ class UsersController < ApplicationController
       render json: @user.errors, status: :unprocessable_entity
     end
   end
+
+    # # PATCH/PUT /posts/1
+    # def update
+    #   if @user.update(user_params)
+    #     @token = encode({ id: @user.id })
+    #     render json: @user.attributes.except('password_digest'),status: :accepted
+    #   else
+    #     render json: @user.errors, status: :unprocessable_entity
+    #   end
+    # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

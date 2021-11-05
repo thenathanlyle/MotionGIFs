@@ -44,7 +44,6 @@ class PostsController < ApplicationController
     end
   end
 
-
   # DELETE /posts/1
   def destroy
     @post.destroy
