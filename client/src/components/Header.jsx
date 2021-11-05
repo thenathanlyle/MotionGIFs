@@ -7,7 +7,8 @@ import logo from "../assets/MotionGIFs_favicon.png";
 // import Menu from "@mui/material/Menu";
 // import MenuItem from "@mui/material/MenuItem";
 
-export default function Header({ currentUser, handleLogout }) {
+export default function Header(props) {
+  const { currentUser, handleLogout } = props;
   return (
     <header className="header">
       <Link to="/">
