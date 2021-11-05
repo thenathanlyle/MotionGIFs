@@ -13,7 +13,6 @@ import PostUpdate from "../screens/posts/PostUpdate";
 import PostDetail from "../screens/posts/PostDetail";
 import CommentCreate from "../screens/comments/CommentCreate";
 import CommentUpdate from "../screens/comments/CommentUpdate";
-import Home from "../screens/home/Home";
 
 export default function MainContainer(props) {
   const { currentUser } = props;
@@ -68,9 +67,6 @@ export default function MainContainer(props) {
   return (
     <div>
       <Switch>
-        <Route path="/home">
-          <Home />
-        </Route>
         <Route path="/posts/:post_id/comments/:id/update">
           {currentUser ? (
             <CommentUpdate handleCommentUpdate={handleCommentUpdate} />
@@ -103,6 +99,13 @@ export default function MainContainer(props) {
           <PostDetail
             posts={posts}
             setPosts={setPosts}
+            handlePostDelete={handlePostDelete}
+            currentUser={currentUser}
+          />
+        </Route>
+        <Route path="/path">
+          <Posts
+            posts={posts}
             handlePostDelete={handlePostDelete}
             currentUser={currentUser}
           />
