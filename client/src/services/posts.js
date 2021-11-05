@@ -29,7 +29,8 @@ export const createPost = async (postData) => {
 
 export const putPost = async (id, postData) => {
   try {
-    const res = await api.get(`/posts/${id}`, postData);
+    const res = await api.put(`/posts/${id}`, postData);
+    console.log(res.data);
     return res.data;
   } catch (error) {
     throw error;
