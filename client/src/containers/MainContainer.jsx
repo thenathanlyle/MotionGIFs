@@ -109,6 +109,13 @@ export default function MainContainer(props) {
             currentUser={currentUser}
           />
         </Route>
+        <Route path="/path">
+          <Posts
+            posts={posts}
+            handlePostDelete={handlePostDelete}
+            currentUser={currentUser}
+          />
+        </Route>
         <Route path="/">
           <Posts
             posts={posts}
