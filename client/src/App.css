@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+body {
+  /* display: flex;
+  flex-direction: column;
+  background-color: #171b1a;
+  color: #d7d6c7; */
+}
+
 /* * {
   color: white;
 } */

@@ -6,11 +6,19 @@ export default function PostCard(props) {
 
   return (
     <div className="post-card">
-      <img src={post?.user.image_url} alt="profile-pic" />
-      <h3>{post?.user.username}</h3>{" "}
-      <Link to={`/posts/${post.id}/`}>
-        <img src={post?.image_url} alt="meme-pic" />
-      </Link>
+      <div className="user-post-card">
+        <img
+          className="user-image"
+          src={post?.user.image_url}
+          alt="profile-pic"
+        />
+        <h3 className="user-name">{post?.user.username}</h3>{" "}
+      </div>
+      <div className="post-image">
+        <Link to={`/posts/${post.id}/`}>
+          <img src={post?.image_url} alt="meme-pic" />
+        </Link>
+      </div>
       <>
         {currentUser && currentUser.id === post?.user_id ? (
           <>
