@@ -1,6 +1,6 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-import logo from "../assets/MotionGIFs_favicon.png";
+import logo from "../assets/MotionGIFs_Logo.png";
 
 // import * as React from "react";
 // import Button from "@mui/material/Button";
@@ -12,7 +12,7 @@ export default function Header(props) {
   return (
     <header className="header">
       <Link to="/">
-        <img src={logo} alt="MotionGIFs-logo" />
+        <img className="header-logo" src={logo} alt="MotionGIFs-logo" />
       </Link>
       {currentUser ? (
         <div>
