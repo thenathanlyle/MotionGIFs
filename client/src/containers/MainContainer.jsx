@@ -35,13 +35,11 @@ export default function MainContainer(props) {
   };
 
   const handlePostUpdate = async (id, formData) => {
-    const newPost = await putPost(id, formData);
+    const updatedPost = await putPost(id, formData);
     setPosts((prevState) =>
-      prevState.map((post) => {
-        return post.id === Number(id) ? newPost : post;
-      })
+      prevState.map((post) => (post.id === Number(id) ? updatedPost : post))
     );
-    history.push("/posts");
+    history.push(`/posts/${id}`);
   };
 
   const handlePostDelete = async (id) => {
