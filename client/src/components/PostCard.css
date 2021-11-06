@@ -8,8 +8,9 @@
   min-height: 300px;
   max-height: 550px;
   border-radius: 5px;
-  border: solid 2px red;
+  border: solid 5px red;
   background-color: orange;
+  /* background-color: #34363f; */
   margin: 20px;
   padding: 20px;
 }
@@ -30,7 +31,7 @@
 }
 
 .user-name {
-  color: red;
+  color: #f8f8ff;
 }
 
 .post-image {
@@ -40,4 +41,9 @@
   max-width: 550px;
   min-height: 300px;
   max-height: 550px;
+}
+
+.post-comments {
+  color: #f8f8ff;
+  text-decoration: none;
 }

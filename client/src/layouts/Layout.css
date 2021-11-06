@@ -9,9 +9,10 @@
 }
 
 .layout-children {
-  flex: 2;
-  padding: 20px 100px 20px 100px;
+  flex: 0 1 auto;
+  padding: 20px 0px 20px 80px;
   height: 80%;
+  margin: 0 auto;
 }
 /* 
 .layout-footer {
