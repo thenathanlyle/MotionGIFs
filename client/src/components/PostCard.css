@@ -31,7 +31,7 @@
 }
 
 .user-name {
-  color: #f8f8ff;
+  color: #fafafa;
 }
 
 .post-image {
@@ -43,11 +43,12 @@
   max-height: 550px;
 }
 
-.post-comments {
-  color: #f8f8ff;
+.post-comments,
+.post-comments:visited {
+  color: #fafafa;
   text-decoration: none;
 }
 
-.menu-css {
-  color: red;
-}
+/* .MuiSvgIcon-colorAction {
+  color: #f8f8ff;
+} */

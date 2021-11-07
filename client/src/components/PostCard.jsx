@@ -5,6 +5,9 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import Badge from "@mui/material/Badge";
+import ChatIcon from "@mui/icons-material/Chat";
+import { createTheme } from "@mui/material/styles";
 
 export default function PostCard(props) {
   const { currentUser, post, handlePostDelete } = props;
@@ -14,6 +17,17 @@ export default function PostCard(props) {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#FFCC00",
+      },
+      secondary: {
+        main: "#fafafa",
+      },
+    },
+  });
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -33,6 +47,8 @@ export default function PostCard(props) {
         <div className="post-card-edit-delete">
           <IconButton
             id="basic-button"
+            theme={theme}
+            color="secondary"
             aria-controls="basic-menu"
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
@@ -62,7 +78,13 @@ export default function PostCard(props) {
         <img className="post-image" src={post?.image_url} alt="meme-pic" />
       </Link>
       <Link to={`/posts/${post.id}/`}>
-        <h5 className="post-comments">Comments: {post?.comments?.length}</h5>
+        <Badge
+          badgeContent={post?.comments?.length}
+          theme={theme}
+          color="primary"
+        >
+          <ChatIcon theme={theme} color="secondary" />
+        </Badge>
       </Link>
     </div>
   );
