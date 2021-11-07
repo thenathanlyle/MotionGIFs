@@ -15,10 +15,6 @@ export default function PostCard(props) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
   const theme = createTheme({
     palette: {
       primary: {
@@ -30,6 +26,10 @@ export default function PostCard(props) {
     },
   });
 
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -39,7 +39,6 @@ export default function PostCard(props) {
       <div className="user-post-card">
         <img className="user-image" src={user} alt="profile-pic" />
         <h3 className="user-name">{post?.user?.username}</h3>
-
         {currentUser && currentUser.id === post?.user_id ? (
           <div className="post-dots">
             <IconButton
