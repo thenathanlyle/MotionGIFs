@@ -6,9 +6,8 @@
   min-height: 300px;
   max-height: 550px;
   border-radius: 5px;
-  border: solid 5px red;
-  background-color: orange;
-  /* background-color: #34363f; */
+  border: solid 2px #808080;
+  background-color: #34363f;
   margin: 20px;
   padding: 20px;
 }
@@ -34,7 +33,7 @@
 }
 
 .post-dots {
-  margin-left: 15px;
+  margin-left: 115px;
 }
 
 .post-image {
@@ -44,9 +43,10 @@
   max-width: 550px;
   min-height: 300px;
   max-height: 550px;
+  border: solid 2.5px #808080;
 }
 
 .post-comments {
   margin-top: 15px;
-  margin-left: 20px;
+  margin-left: 250px;
 }

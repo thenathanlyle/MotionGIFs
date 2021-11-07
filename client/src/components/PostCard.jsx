@@ -39,39 +39,38 @@ export default function PostCard(props) {
       <div className="user-post-card">
         <img className="user-image" src={user} alt="profile-pic" />
         <h3 className="user-name">{post?.user?.username}</h3>
+        {currentUser && currentUser.id === post?.user_id ? (
+          <div className="post-dots">
+            <IconButton
+              id="basic-button"
+              theme={theme}
+              color="secondary"
+              aria-controls="basic-menu"
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClick}
+            >
+              <MoreHorizIcon />
+            </IconButton>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+              <MenuItem component={Link} to={`/posts/${post.id}/update`}>
+                Edit
+              </MenuItem>
+              <MenuItem onClick={() => handlePostDelete(post.id)}>
+                Delete
+              </MenuItem>
+            </Menu>
+          </div>
+        ) : null}
       </div>
-      {currentUser && currentUser.id === post?.user_id ? (
-        <div className="post-dots">
-          <IconButton
-            id="basic-button"
-            theme={theme}
-            color="secondary"
-            aria-controls="basic-menu"
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-          >
-            <MoreHorizIcon />
-          </IconButton>
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
-          >
-            <MenuItem component={Link} to={`/posts/${post.id}/update`}>
-              Edit
-            </MenuItem>
-            <MenuItem onClick={() => handlePostDelete(post.id)}>
-              Delete
-            </MenuItem>
-          </Menu>
-        </div>
-      ) : null}
-
       <Link to={`/posts/${post.id}/`}>
         <img className="post-image" src={post?.image_url} alt="meme-pic" />
       </Link>
