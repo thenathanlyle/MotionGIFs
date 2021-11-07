@@ -1,8 +1,6 @@
 .post-card {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  position: relative;
   min-width: 350px;
   max-width: 550px;
   min-height: 300px;
@@ -23,15 +21,20 @@
 }
 
 .user-image {
-  object-position: center;
+  /* object-position: center;
   object-fit: cover;
-  height: 100px;
-  width: 100px;
-  border-radius: 50px;
+  border-radius: 50px; */
+  height: 40px;
+  width: 40px;
 }
 
 .user-name {
   color: #fafafa;
+  margin-left: 10px;
+}
+
+.post-dots {
+  margin-left: 115px;
 }
 
 .post-image {
@@ -42,13 +45,3 @@
   min-height: 300px;
   max-height: 550px;
 }
-
-.post-comments,
-.post-comments:visited {
-  color: #fafafa;
-  text-decoration: none;
-}
-
-/* .MuiSvgIcon-colorAction {
-  color: #f8f8ff;
-} */
