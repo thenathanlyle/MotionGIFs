@@ -1,7 +1,6 @@
 .layout {
   display: flex;
   flex-direction: column;
-  /* background-color: #18191e; */
 }
 
 .layout-header {
@@ -18,9 +17,3 @@
 .layout-footer {
   height: 10%;
 }
-
-/* .layout-children {
-  flex: 1 0 auto;
-  min-height: 400px;
-  margin: 0 auto;
-} */

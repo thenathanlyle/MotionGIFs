@@ -1,20 +1,11 @@
 .footer {
-  flex-shrink: 0;
-  min-width: 375px;
-  color: #d7d6c7;
-  display: flex;
-  justify-content: center;
+  background-color: #000000;
 }
 
-.footer-linkedin-link,
-.footer-github-link,
-.footer-linkedin-link:visited,
-.footer-github-link:visited {
-  color: #ffcc00;
+.footer-icons {
+  margin-left: 75px;
 }
-
-.footer-svg-container {
-  height: 30px;
-  width: 30px;
-  margin: 1rem;
+.footer-github,
+.footer-linkedin {
+  padding-right: 15px;
 }
