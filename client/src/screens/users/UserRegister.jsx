@@ -5,10 +5,11 @@ export default function UserRegister({ handleRegister }) {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
-    image_url: "",
+    // image_url: "",
     password: "",
   });
-  const { username, email, image_url, password } = formData;
+  // Have logic for user image_url when able to have user create/update screens done.
+  const { username, email, password } = formData;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,13 +41,13 @@ export default function UserRegister({ handleRegister }) {
         value={email}
         onChange={handleChange}
       />
-      <TextField
+      {/* <TextField
         type="text"
         label="Image"
         name="image_url"
         value={image_url}
         onChange={handleChange}
-      />
+      /> */}
       <TextField
         minLength="6"
         type="password"
