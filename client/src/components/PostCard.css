@@ -34,7 +34,7 @@
 }
 
 .post-dots {
-  margin-left: 115px;
+  margin-left: 15px;
 }
 
 .post-image {
@@ -44,4 +44,9 @@
   max-width: 550px;
   min-height: 300px;
   max-height: 550px;
+}
+
+.post-comments {
+  margin-top: 15px;
+  margin-left: 20px;
 }
