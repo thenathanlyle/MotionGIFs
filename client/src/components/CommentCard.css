@@ -1,5 +1,37 @@
 .comment-card {
   width: 450px;
   height: 200px;
-  border: solid 2px red;
+  border-radius: 5px;
+  border: solid 2px #808080;
+  background-color: #34363f;
+  margin: 20px;
+  padding: 20px;
+}
+
+.user-comment-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: center;
+}
+
+.user-comment-image {
+  /* object-position: center;
+  object-fit: cover;
+  border-radius: 50px; */
+  height: 40px;
+  width: 40px;
+}
+
+.comment-username {
+  color: #fafafa;
+  margin-left: 10px;
+}
+
+.comments-dots {
+  margin-left: 230px;
+}
+
+.comments-detail {
+  color: #fafafa;
 }

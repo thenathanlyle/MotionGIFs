@@ -17,12 +17,14 @@
   flex-direction: row;
   justify-content: baseline;
   align-items: center;
+  padding-bottom: 10px;
 }
 
 .user-image {
   /* object-position: center;
   object-fit: cover;
   border-radius: 50px; */
+  margin-left: 10px;
   height: 40px;
   width: 40px;
 }
