@@ -14,7 +14,13 @@
   height: 80%;
   margin: 0 auto;
 }
-/* 
+
 .layout-footer {
   height: 10%;
+}
+
+/* .layout-children {
+  flex: 1 0 auto;
+  min-height: 400px;
+  margin: 0 auto;
 } */
