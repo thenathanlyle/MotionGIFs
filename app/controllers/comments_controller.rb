@@ -9,11 +9,11 @@ class CommentsController < ApplicationController
     render json: @comments
   end
 
-  # def index
-  #   @post = Post.find(params[:post_id])
-  #   @comments = Comment.where(post_id: @post.id)
-  #   render json: @comments, include: :post, status: :ok
-  # end
+  def index
+    @post = Post.find(params[:post_id])
+    @comments = Comment.where(post_id: @post.id)
+    render json: @comments, include: :post, status: :ok
+  end
 
   # GET /comments/1
   def show
