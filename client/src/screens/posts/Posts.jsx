@@ -4,7 +4,6 @@ export default function Posts(props) {
   const { currentUser, posts, handlePostDelete } = props;
   return (
     <div className="posts-container">
-      <h3>Fresh Drop</h3>
       {posts
         .slice(0)
         .reverse()

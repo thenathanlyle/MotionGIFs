@@ -1,6 +1,8 @@
 .layout {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 
 .layout-header {
@@ -9,7 +11,7 @@
 
 .layout-children {
   flex: 0 1 auto;
-  padding: 20px 0px 20px 80px;
+  padding: 20px 0px 20px 50px;
   height: 80%;
   margin: 0 auto;
 }

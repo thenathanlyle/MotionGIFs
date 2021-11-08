@@ -1,19 +1,12 @@
-.App {
-  text-align: center;
-}
-
 html,
 body {
   height: 100%;
+  width: 100%;
 }
 
 body {
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  background-color: #171b1a;
-  color: #d7d6c7; */
+  /* background-color: #171b1a; */
+  color: #fafafa;
 }
-
-/* * {
-  color: white;
-} */

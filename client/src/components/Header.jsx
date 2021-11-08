@@ -9,27 +9,6 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { createTheme } from "@mui/material/styles";
 
-// export default function Header(props) {
-//   const { currentUser, handleLogout } = props;
-//   return (
-//     <header className="header">
-//       <Link to="/">
-//         <img className="header-logo" src={logo} alt="MotionGIFs-logo" />
-//       </Link>
-//       {currentUser ? (
-//         <div>
-//           <p>Welcome {currentUser.username}</p>
-//           <button onClick={handleLogout}>Logout</button>
-//         </div>
-//       ) : (
-//         <Link to="/login">Login/Register</Link>
-//       )}
-//       <Link to="/posts">Posts</Link>
-//       <Link to="/posts/create">Create a post</Link>
-//     </header>
-//   );
-// }
-
 export default function Header({ currentUser, handleLogout }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -53,17 +32,19 @@ export default function Header({ currentUser, handleLogout }) {
   return (
     <header className="header">
       <div>
-        <IconButton
-          id="basic-button"
-          theme={theme}
-          color="primary"
-          aria-controls="basic-menu"
-          aria-haspopup="true"
-          aria-expanded={open ? "true" : undefined}
-          onClick={handleClick}
-        >
-          {anchorEl === null ? <MenuIcon /> : <CloseIcon />}
-        </IconButton>
+        <div className="header-icon-button">
+          <IconButton
+            id="basic-button"
+            theme={theme}
+            color="primary"
+            aria-controls="basic-menu"
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}
+          >
+            {anchorEl === null ? <MenuIcon /> : <CloseIcon />}
+          </IconButton>
+        </div>
         <Menu
           id="basic-menu"
           anchorEl={anchorEl}
@@ -76,21 +57,28 @@ export default function Header({ currentUser, handleLogout }) {
           {currentUser ? (
             <div>
               <MenuItem>{currentUser.username}</MenuItem>
-              <MenuItem onClick={handleClose}>Add Meme</MenuItem>
+              <MenuItem component={Link} to={`/posts/create`}>
+                Create a Post
+              </MenuItem>
               <MenuItem onClick={handleLogout}>Logout</MenuItem>
             </div>
           ) : (
             <div>
-              <MenuItem component={Link} to={`/login/`}>
-                Login/Register
+              <MenuItem component={Link} to={`/register`}>
+                Sign Up
               </MenuItem>
-              <MenuItem onClick={handleClose}>Add Meme</MenuItem>
+              <MenuItem component={Link} to={`/login`}>
+                Log In
+              </MenuItem>
+              <MenuItem component={Link} to={`/posts/create`}>
+                Create a Post
+              </MenuItem>
             </div>
           )}
         </Menu>
-      </div>{" "}
+      </div>
       <Link to="/">
-        <img src={logo} alt="MotionGIFs-logo" />
+        <img src={logo} className="header-logo" alt="MotionGIFs-logo" />
       </Link>
     </header>
   );

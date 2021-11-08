@@ -4,6 +4,8 @@ import PostCard from "../../components/PostCard";
 import CommentCard from "../../components/CommentCard";
 import { getOnePost } from "../../services/posts";
 import { deleteComment } from "../../services/comments";
+import Button from "@mui/material/Button";
+import { createTheme } from "@mui/material/styles";
 
 export default function PostDetail(props) {
   const { currentUser, posts, setPosts, handlePostDelete } = props;
@@ -11,6 +13,17 @@ export default function PostDetail(props) {
   const [comments, setComments] = useState(null);
   const [toggle, setToggle] = useState(false);
   const { id } = useParams();
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#FFCC00",
+      },
+      secondary: {
+        main: "#fafafa",
+      },
+    },
+  });
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -42,7 +55,6 @@ export default function PostDetail(props) {
     );
     setToggle(true);
   };
-
   if (!toggle) return <h3>loading</h3>;
 
   return (
@@ -52,9 +64,15 @@ export default function PostDetail(props) {
         post={post}
         handlePostDelete={handlePostDelete}
       />
-      <Link to={`/posts/${post.id}/comments/create`}>
-        <button>Add a Comment</button>
-      </Link>
+      <Button
+        component={Link}
+        to={`/posts/${post.id}/comments/create`}
+        theme={theme}
+        color="primary"
+        variant="contained"
+      >
+        Add a Comment
+      </Button>
       {comments.map((comment) => (
         <CommentCard
           currentUser={currentUser}
