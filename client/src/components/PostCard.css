@@ -22,16 +22,16 @@
   /* object-position: center;
   object-fit: cover;
   border-radius: 50px; */
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
   margin-left: 10px;
   height: 40px;
   width: 40px;
 }
 
 .user-name {
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
   color: #fafafa;
   margin-left: 10px;
 }
