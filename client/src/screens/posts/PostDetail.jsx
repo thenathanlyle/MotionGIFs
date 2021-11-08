@@ -70,6 +70,7 @@ export default function PostDetail(props) {
         theme={theme}
         color="primary"
         variant="contained"
+        style={{ margin: "0 auto", display: "flex" }}
       >
         Add a Comment
       </Button>
