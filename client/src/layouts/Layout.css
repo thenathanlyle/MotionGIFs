@@ -12,11 +12,23 @@
 
 .layout-children {
   flex: 0 1 auto;
-  padding: 20px 0px 20px 50px;
+  padding: 20px 0px 20px 10px;
   height: 80%;
   margin: 0 auto;
 }
 
 .layout-footer {
   height: 10%;
+}
+
+@media screen and (min-width: 768px) {
+  .layout-children {
+    padding: 20px 0px 20px 50px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .layout-children {
+    padding: 20px 0px 20px 50px;
+  }
 }
