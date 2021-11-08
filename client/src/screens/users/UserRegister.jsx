@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { TextField, Button } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 
@@ -37,40 +38,51 @@ export default function UserRegister({ handleRegister }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <TextField
-        autoFocus
-        type="text"
-        label="Username"
-        name="username"
-        value={username}
-        onChange={handleChange}
-      />
-      <TextField
-        type="email"
-        label="Email"
-        name="email"
-        value={email}
-        onChange={handleChange}
-      />
-      {/* <TextField
+    <div>
+      <form onSubmit={handleSubmit}>
+        <TextField
+          autoFocus
+          type="text"
+          label="Username"
+          name="username"
+          value={username}
+          onChange={handleChange}
+        />
+        <TextField
+          type="email"
+          label="Email"
+          name="email"
+          value={email}
+          onChange={handleChange}
+        />
+        {/* <TextField
         type="text"
         label="Image"
         name="image_url"
         value={image_url}
         onChange={handleChange}
       /> */}
-      <TextField
-        minLength="6"
-        type="password"
-        label="Password"
-        name="password"
-        value={password}
-        onChange={handleChange}
-      />
-      <Button type="submit" theme={theme} color="primary" variant="contained">
-        Submit
+        <TextField
+          minLength="6"
+          type="password"
+          label="Password"
+          name="password"
+          value={password}
+          onChange={handleChange}
+        />
+        <Button type="submit" theme={theme} color="primary" variant="contained">
+          Submit
+        </Button>
+      </form>
+      <Button
+        component={Link}
+        to={`/login`}
+        theme={theme}
+        color="primary"
+        variant="contained"
+      >
+        Already a user? Log in here!
       </Button>
-    </form>
+    </div>
   );
 }

@@ -36,7 +36,6 @@ export default function UserLogin({ handleLogin }) {
 
   return (
     <div>
-      <Link to="/register">Not a user? Sign up today!</Link>
       <form onSubmit={handleSubmit}>
         <TextField
           autoFocus
@@ -58,6 +57,15 @@ export default function UserLogin({ handleLogin }) {
           Submit
         </Button>
       </form>
+      <Button
+        component={Link}
+        to={`/register`}
+        theme={theme}
+        color="primary"
+        variant="contained"
+      >
+        Not a user? Sign up for MotionGIFS today!
+      </Button>
     </div>
   );
 }
