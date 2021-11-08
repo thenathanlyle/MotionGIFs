@@ -16,7 +16,7 @@ export default function Header({ currentUser, handleLogout }) {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#000000",
+        main: "#fafafa",
       },
     },
   });
