@@ -64,7 +64,7 @@ export default function UserLogin({ handleLogin }) {
         color="primary"
         variant="contained"
       >
-        Not a user? Sign up for MotionGIFS today!
+        Not a user? Sign up today!
       </Button>
     </div>
   );
