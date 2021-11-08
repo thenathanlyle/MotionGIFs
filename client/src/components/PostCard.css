@@ -1,10 +1,8 @@
 .post-card {
   display: flex;
   flex-direction: column;
-  min-width: 350px;
-  max-width: 550px;
-  min-height: 300px;
-  max-height: 550px;
+  width: 350px;
+  height: 414px;
   border-radius: 5px;
   border: solid 2px #808080;
   background-color: #34363f;
@@ -46,6 +44,8 @@
   min-height: 300px;
   max-height: 550px;
   margin-left: 25px;
+  width: 15%;
+  height: 15vh;
   border: solid 2.5px #808080;
 }
 

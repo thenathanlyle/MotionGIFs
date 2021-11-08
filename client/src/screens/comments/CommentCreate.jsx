@@ -39,6 +39,7 @@ export default function CommentCreate(props) {
   return (
     <div>
       <h1>Add a Comment</h1>
+      <p>Limit 200 characters</p>
       <form onSubmit={handleSubmit}>
         <TextField
           autoFocus
