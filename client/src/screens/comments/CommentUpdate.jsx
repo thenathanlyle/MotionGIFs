@@ -50,7 +50,7 @@ export default function CommentUpdate(props) {
   return (
     <div>
       <h1>Update your Comment</h1>
-      <p>Limit 200 characters</p>
+      <p>Limit 250 characters</p>
       <form onSubmit={handleSubmit}>
         <TextField
           autoFocus

@@ -53,3 +53,55 @@
   margin-top: 15px;
   margin-left: 290px;
 }
+
+@media screen and (min-width: 768px) {
+  .post-card {
+    width: 500px;
+    height: 500px;
+  }
+  .post-image {
+    object-position: center;
+    object-fit: cover;
+    min-width: 440px;
+    max-width: 550px;
+    min-height: 390px;
+    max-height: 700px;
+    margin-left: 25px;
+    width: 15%;
+    height: 15vh;
+    border: solid 2.5px #808080;
+  }
+  .post-dots {
+    margin-left: 260px;
+  }
+
+  .post-comments {
+    margin-top: 15px;
+    margin-left: 430px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .post-card {
+    width: 700px;
+    height: 700px;
+  }
+  .post-image {
+    object-position: center;
+    object-fit: cover;
+    min-width: 650px;
+    min-height: 590px;
+    margin-left: 25px;
+    width: 15%;
+    height: 15vh;
+    border: solid 2.5px #808080;
+  }
+  .post-dots {
+    margin-left: 460px;
+  }
+
+  .post-comments {
+    margin-top: 15px;
+    margin-left: 630px;
+  }
+}
