@@ -6,10 +6,6 @@
 
 [Deployed Site](https://motiongifs.netlify.app/ "MotionGIFs")
 
-## Overview
-
-**MotionGIFs** is a meme displaying app where users can post gifs and interact with one another. Users are able to comment on other users posted content.
-
 ---
 
 - [Overview](#overview)
@@ -28,6 +24,10 @@
 - [Code Issues & Resolutions](#code-issues--resolutions)
 
 <br>
+
+## Overview
+
+**MotionGIFs** is a meme displaying app where users can post gifs and interact with one another. Users are able to comment on other users posted content.
 
 <br>
 
