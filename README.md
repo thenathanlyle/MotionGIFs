@@ -1,5 +1,11 @@
 # MotionGIFs
 
+![MotionGIFs Logo](./client/src/assets/MotionGIFs_Logo.png)
+
+### MotionGIFs Website Link
+
+[Deployed Site](https://motiongifs.netlify.app/ "MotionGIFs")
+
 - [Overview](#overview)
 - [MVP](#mvp)
   - [Goals](#goals)
@@ -77,10 +83,7 @@ Have a function homepage where users are able to sign in/sign up for a MotionGIF
 ```structure
 src
 |__ assets/
-      |__ fonts
       |__ images
-|__ helper/
-      |__ sort.js
 |__ components/
       |__ Header.jsx
       |__ Footer.jsx
@@ -92,20 +95,25 @@ src
       |__ api-config.js
       |__ users.js
       |__ posts.js
+|__ containers/
+    |__ MainContainer.jsx
 |__ layout/
       |__ Layout.jsx
 |__ screens/
-      |__ Home.jsx
-      |__ SignUp.jsx
-      |__ SignIn.jsx
+      |__ UserLogin.jsx
+      |__ UserRegister.jsx
       |__ Posts.jsx
       |__ PostDetail.jsx
       |__ PostCreate.jsx
-      |__ PostEdit.jsx
+      |__ PostUpdate.jsx
       |__ CommentCreate.jsx
-      |__ CommentEdit.jsx
-|__ containers/
-      |__ PostsContainer.jsx
+      |__ CommentUpdate.jsx
+|__ services/
+      |__ api-config.js
+      |__ auth.js
+      |__ comments.js
+      |__ posts.js
+|__ App.js/
 ```
 
 ---
@@ -114,17 +122,17 @@ src
 
 | Task                            | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------------------- | :------: | :------------: | :-----------: | :---------: |
-| Define models                   |    H     |      2 hr      |     0 hrs     |     TBD     |
-| Define controllers              |    H     |      2 hr      |     0 hrs     |     TBD     |
-| Define routes                   |    H     |      3 hr      |     0 hrs     |     TBD     |
-| Define screens logic            |    H     |     8 hrs      |     0 hrs     |     TBD     |
-| Define component logic          |    H     |     8 hrs      |     0 hrs     |     TBD     |
-| Define services logic           |    H     |     2 hrs      |     0 hrs     |     TBD     |
-| Define container logic          |    H     |     3 hrs      |     0 hrs     |     TBD     |
-| Define layout logic             |    H     |      2 hr      |     0 hrs     |     TBD     |
-| Base CSS with MUI & Vanilla CSS |    5H    |     2 hrs      |     0 hrs     |     TBD     |
-| Advanced styling                |    H     |     10 hrs     |     0 hrs     |     TBD     |
-| TOTAL                           |          |     45 hrs     |     0 hrs     |     TBD     |
+| Define models                   |    H     |      2 hr      |    0.5 hrs    |   0.5 hrs   |
+| Define controllers              |    H     |      2 hr      |    2.5 hrs    |    3 hrs    |
+| Define routes                   |    H     |      3 hr      |     2 hrs     |    5 hrs    |
+| Define screens logic            |    H     |     8 hrs      |    10 hrs     |   15 hrs    |
+| Define component logic          |    H     |     8 hrs      |    10 hrs     |   25 hrs    |
+| Define services logic           |    H     |     2 hrs      |     2 hrs     |   27 hrs    |
+| Define container logic          |    H     |     3 hrs      |     3 hrs     |   30 hrs    |
+| Define layout logic             |    H     |      2 hr      |     3 hrs     |   33 hrs    |
+| Base CSS with MUI & Vanilla CSS |    5H    |     2 hrs      |     3 hrs     |   36 hrs    |
+| Advanced styling                |    H     |     10 hrs     |     9 hrs     |   45 hrs    |
+| TOTAL                           |          |     45 hrs     |    45 hrs     |   45 hrs    |
 
 <br>
 
@@ -145,13 +153,3 @@ src
 - _Add categories to filters posts like hashtags_
 - _Add sort options to search most recent and most trending posts_
 - _Add user profile pages to view what individual user uploads_
-
----
-
-## Code Showcase
-
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
-
-## Code Issues & Resolutions
-
-> Use this section to list of all major issues encountered and their resolution.
