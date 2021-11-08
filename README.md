@@ -6,6 +6,8 @@
 
 [Deployed Site](https://motiongifs.netlify.app/ "MotionGIFs")
 
+---
+
 - [Overview](#overview)
 - [MVP](#mvp)
   - [Goals](#goals)
