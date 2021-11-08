@@ -17,7 +17,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-icons">
         <Link
-          to={{ pathname: "https://www.linkedin.com/in/thenathanlyle/" }}
+          to={{ pathname: "https://github.com/thenathanlyle" }}
           target="_blank"
         >
           <GitHubIcon
