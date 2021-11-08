@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { TextField } from "@mui/material";
+import { TextField, Button } from "@mui/material";
 import { useParams } from "react-router-dom";
+import { createTheme } from "@mui/material/styles";
 
 export default function PostUpdate(props) {
   const { posts, handlePostUpdate } = props;
@@ -10,6 +11,17 @@ export default function PostUpdate(props) {
   });
   const { image_url } = formData;
   const { id } = useParams();
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#FFCC00",
+      },
+      secondary: {
+        main: "#fafafa",
+      },
+    },
+  });
 
   useEffect(() => {
     const formDataLoad = () => {
@@ -44,9 +56,12 @@ export default function PostUpdate(props) {
           label="Image"
           name="image_url"
           value={image_url}
+          fullWidth
           onChange={handleChange}
         />
-        <button>Submit</button>
+        <Button type="submit" theme={theme} color="primary" variant="contained">
+          Submit
+        </Button>
       </form>
     </div>
   );

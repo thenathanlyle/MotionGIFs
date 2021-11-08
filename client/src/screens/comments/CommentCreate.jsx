@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { TextField } from "@mui/material";
+import { TextField, Button } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 
 export default function CommentCreate(props) {
   const { handleCommentCreate } = props;
@@ -10,6 +11,17 @@ export default function CommentCreate(props) {
 
   const { opinion } = formData;
   const { id } = useParams();
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#FFCC00",
+      },
+      secondary: {
+        main: "#fafafa",
+      },
+    },
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,15 +43,18 @@ export default function CommentCreate(props) {
         <TextField
           autoFocus
           multiline={true}
-          rows={10}
+          rows={5}
           id="comment"
+          fullWidth
           type="text"
           label="Comment"
           name="opinion"
           value={opinion}
           onChange={handleChange}
         />
-        <button>Submit</button>
+        <Button type="submit" theme={theme} color="primary" variant="contained">
+          Submit
+        </Button>
       </form>
     </div>
   );

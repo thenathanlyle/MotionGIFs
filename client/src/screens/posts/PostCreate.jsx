@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { TextField } from "@mui/material";
+import { TextField, Button } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 
 export default function PostCreate(props) {
   const { handlePostCreate } = props;
@@ -8,6 +9,17 @@ export default function PostCreate(props) {
     image_url: "",
   });
   const { image_url } = formData;
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#FFCC00",
+      },
+      secondary: {
+        main: "#fafafa",
+      },
+    },
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,9 +43,12 @@ export default function PostCreate(props) {
           label="Image"
           name="image_url"
           value={image_url}
+          fullWidth
           onChange={handleChange}
         />
-        <button>Submit</button>
+        <Button type="submit" theme={theme} color="primary" variant="contained">
+          Submit
+        </Button>
       </form>
     </div>
   );

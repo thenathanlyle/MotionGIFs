@@ -7,6 +7,10 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  /* background-color: #171b1a; */
+  background-color: #18191e;
   color: #fafafa;
+}
+
+.MuiTextField-root {
+  background-color: #fafafa;
 }

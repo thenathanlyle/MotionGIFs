@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { TextField } from "@mui/material";
+import { TextField, Button } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 
 export default function UserRegister({ handleRegister }) {
   const [formData, setFormData] = useState({
@@ -10,6 +11,17 @@ export default function UserRegister({ handleRegister }) {
   });
   // Have logic for user image_url when able to have user create/update screens done.
   const { username, email, password } = formData;
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#FFCC00",
+      },
+      secondary: {
+        main: "#fafafa",
+      },
+    },
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -56,7 +68,9 @@ export default function UserRegister({ handleRegister }) {
         value={password}
         onChange={handleChange}
       />
-      <button>Submit</button>
+      <Button type="submit" theme={theme} color="primary" variant="contained">
+        Submit
+      </Button>
     </form>
   );
 }

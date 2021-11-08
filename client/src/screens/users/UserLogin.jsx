@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { TextField } from "@mui/material";
+import { TextField, Button } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 
 export default function UserLogin({ handleLogin }) {
   const [formData, setFormData] = useState({
@@ -8,6 +9,17 @@ export default function UserLogin({ handleLogin }) {
     password: "",
   });
   const { username, password } = formData;
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#FFCC00",
+      },
+      secondary: {
+        main: "#fafafa",
+      },
+    },
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -42,7 +54,9 @@ export default function UserLogin({ handleLogin }) {
           value={password}
           onChange={handleChange}
         />
-        <button>Submit</button>
+        <Button type="submit" theme={theme} color="primary" variant="contained">
+          Submit
+        </Button>
       </form>
     </div>
   );
